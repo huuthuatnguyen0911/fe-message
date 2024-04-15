@@ -270,7 +270,7 @@ export default {
     },
 
     checkVideoEnded(video) {
-      if (video.ended) {
+      if (video?.ended) {
         console.log("Video stream has ended");
       } else {
         console.log("Video stream khong dung");
@@ -281,7 +281,9 @@ export default {
     playStream(idVideoTag, stream) {
       const video = document.getElementById(idVideoTag);
       video.srcObject = stream;
-      video.play();
+      video.addEventListener("canplay", function () {
+        video.play();
+      });
       video.addEventListener("timeupdate", this.checkVideoEnded(video));
     },
   },

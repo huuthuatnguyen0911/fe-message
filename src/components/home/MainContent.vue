@@ -158,7 +158,7 @@
                       <div class="message-row">
                         <div class="d-flex align-items-center">
                           <!-- Message: content -->
-                          <div class="message-content bg-danger">
+                          <div class="message-content bg-success">
                             <h6 class="mb-2">
                               {{ item.dataSender.local.fullname }}
                             </h6>
@@ -221,7 +221,7 @@
                           class="d-flex align-items-center justify-content-end"
                         >
                           <!-- Message: content -->
-                          <div class="message-content bg-danger text-white">
+                          <div class="message-content bg-success text-white">
                             <div v-if="item.type == 'TEXT'">
                               {{ item.content }}
                             </div>
@@ -573,7 +573,7 @@ export default {
 
     onSearchFriend(e) {
       let searchText = e.target.value.toLowerCase();
-      this.dataFriendSearch = this.listFriends.filter((item) => {
+      this.dataFriendSearch = this.listFriends?.filter((item) => {
         const textNameItem = item.local.fullname
           .toLowerCase()
           .split(" ")

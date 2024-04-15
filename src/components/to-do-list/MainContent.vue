@@ -267,7 +267,7 @@ export default {
   },
   watch: {
     inforWork(newVal) {
-      this.onGetTask(newVal._id);
+      this.onGetTask(newVal?._id);
     },
   },
 };

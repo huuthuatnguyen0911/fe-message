@@ -33,7 +33,7 @@ export default {
   sockets: {
     connect() {
       this.$socket.emit("client:updateStateUser", {
-        id: this.$store.state.inforMe._id,
+        id: this.$store.state.inforMe?._id,
         status: true,
       });
     },
